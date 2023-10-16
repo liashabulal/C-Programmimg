@@ -1,0 +1,36 @@
+/* program to count the number of words,charecters and lines in a text*/
+#include<stdio.h>
+int main()
+{
+    char str[200];
+    int line,word,ch,i;
+
+    line=word=ch=0;
+
+    printf("Enter the text and terminate with ~:\n");
+    scanf("%[^~]",str);
+
+    for(i=0; str[i]!='\0';i++)
+    {
+       if(str[i]=='\n')
+       {
+           line++;
+           word++;
+       }
+       else
+       {
+            if(str[i]==' '||str[i]='\t')
+           {
+               word++;
+               ch++;
+           }
+           else{
+               ch++;
+           }
+       }
+    }
+    printf("character count=%d\n",ch);
+    printf("line count=%d\n",line);
+    printf("word  count=%d\n",word);
+    return 0;
+}
